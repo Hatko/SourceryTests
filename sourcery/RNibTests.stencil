@@ -1,0 +1,39 @@
+import XCTest
+@testable import SourceryTests
+
+class GeneratedTests: XCTestCase  {
+    func test_viewsOutlets() {
+{% for staticXibVar in type.R.nib.staticVariables %}
+    {% for subtype in staticXibVar.type.containedTypes where staticXibVar.defaultValue|contains:subtype.name %}
+        {% for method in subtype.methods where method.selectorName == "firstView(owner:options:)" %}
+            {% for variable in method.returnType.variables %}
+                {# Check for suffix to skip outlets that are optionaly presented #}
+                {% for attribute in variable.attributes where attribute == "IBOutlet" and variable.typeName|hasSuffix:"!" %}
+        XCTAssertNotNil(R.nib.{{ staticXibVar.name }}.firstView(owner: nil)!.{{variable.name}})
+                {% endfor %}
+            {% endfor %}
+        {% endfor %}
+    {% endfor %}
+{% endfor %}
+    }
+    
+    func test_viewControllersOutlets() {
+{% for staticXibVar in type.R.storyboard.staticVariables %}
+    {% for subtype in staticXibVar.type.containedTypes where subtype.name|hasSuffix:staticXibVar.name %}
+        {% for controllerProp in subtype.variables where controllerProp.typeName|contains:"StoryboardViewControllerResource" %}
+        {# Use compound value to avoid conflicts #}
+        let {{staticXibVar.name}}{{controllerProp.name|upperFirstLetter}} = R.storyboard.{{staticXibVar.name}}.{{controllerProp.name}}()!
+        {{staticXibVar.name}}{{controllerProp.name|upperFirstLetter}}.loadViewIfNeeded()
+            {% for method in subtype.methods where method.selectorName|contains:controllerProp.name %}
+                {% for variable in method.returnType.variables %}
+                    {# Check for suffix to skip outlets that are optionaly presented #}
+                    {% for attribute in variable.attributes where attribute == "IBOutlet" and variable.typeName|hasSuffix:"!" %}
+        XCTAssertNotNil({{staticXibVar.name}}{{controllerProp.name|upperFirstLetter}}.{{variable.name}})
+                    {% endfor %}
+                {% endfor %}
+            {% endfor %}
+        {% endfor %}
+    {% endfor %}
+{% endfor %}
+    }
+}

@@ -1,0 +1,8 @@
+sources:
+  - "./../../SourceryTests/"
+  - "./../../SourceryTests/R.generated.swift"
+templates:
+  - "./../RNibTests.stencil"
+output:
+  "./../../SourceryTests/GeneratedTests"
+args:
