@@ -1,22 +1,23 @@
 import XCTest
-@testable import SourceryTests
+import Rswift
+@testable import Albert
 
 class GeneratedTests: XCTestCase  {
     func test_viewsOutlets() {
 {% for staticXibVar in type.R.nib.staticVariables %}
-    {% for subtype in staticXibVar.type.containedTypes where staticXibVar.defaultValue|contains:subtype.name %}
+    {% for subtype in staticXibVar.type.containedTypes where staticXibVar.defaultValue|replace:"()","" == subtype.name %}
         {% for method in subtype.methods where method.selectorName == "firstView(owner:options:)" %}
             {% for variable in method.returnType.variables %}
                 {# Check for suffix to skip outlets that are optionaly presented #}
                 {% for attribute in variable.attributes where attribute == "IBOutlet" and variable.typeName|hasSuffix:"!" %}
-        XCTAssertNotNil(R.nib.{{ staticXibVar.name }}.firstView(owner: nil)!.{{variable.name}})
+        expect(R.nib.{{ staticXibVar.name }}.first().{{variable.name}}).toNot(beNil())
                 {% endfor %}
             {% endfor %}
         {% endfor %}
     {% endfor %}
 {% endfor %}
     }
-    
+
     func test_viewControllersOutlets() {
 {% for staticXibVar in type.R.storyboard.staticVariables %}
     {% for subtype in staticXibVar.type.containedTypes where subtype.name|hasSuffix:staticXibVar.name %}
@@ -28,7 +29,7 @@ class GeneratedTests: XCTestCase  {
                 {% for variable in method.returnType.variables %}
                     {# Check for suffix to skip outlets that are optionaly presented #}
                     {% for attribute in variable.attributes where attribute == "IBOutlet" and variable.typeName|hasSuffix:"!" %}
-        XCTAssertNotNil({{staticXibVar.name}}{{controllerProp.name|upperFirstLetter}}.{{variable.name}})
+        expect({{staticXibVar.name}}{{controllerProp.name|upperFirstLetter}}.{{variable.name}}).toNot(beNil())
                     {% endfor %}
                 {% endfor %}
             {% endfor %}

@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Swinject
+import SwinjectStoryboard
+import Rswift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let container = Container.default
+        SwinjectStoryboard.defaultContainer = container
+
+        guard let listController = R.storyboard.main.instantiateInitialViewController() else {
+            fatalError("Invalid storyboard state")
+        }
+
+        window?.rootViewController = listController
+
         return true
     }
 
@@ -42,5 +53,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+extension StoryboardResourceWithInitialControllerType {
+    func instantiateInitialViewController(withContainer container: Container) -> InitialController? {
+        let swinjectStoryboard = withContainer(container: container)
+        return swinjectStoryboard.instantiateInitialViewController() as? InitialController
+    }
+}
+
+extension StoryboardResourceType {
+    func withContainer(container: Container, bundle: Bundle? = nil) -> SwinjectStoryboard {
+        return SwinjectStoryboard.create(name: self.name, bundle: bundle, container: container)
+    }
 }
 

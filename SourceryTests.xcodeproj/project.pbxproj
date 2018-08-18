@@ -7,8 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C02B355E212879E1009D93E9 /* Mocks.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B355C212879E1009D93E9 /* Mocks.generated.swift */; };
+		C02B356021287A1D009D93E9 /* MainContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B355F21287A1D009D93E9 /* MainContainer.swift */; };
+		C02B356221287FAF009D93E9 /* UsersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B356121287FAF009D93E9 /* UsersController.swift */; };
+		C02B356421287FDD009D93E9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B356321287FDD009D93E9 /* User.swift */; };
+		C02B356621288177009D93E9 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B356521288177009D93E9 /* UserListViewController.swift */; };
+		C02B3567212882A3009D93E9 /* DependencyInjection.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B355B212879E0009D93E9 /* DependencyInjection.generated.swift */; };
+		C02B356B21288609009D93E9 /* URLSessionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B356A21288609009D93E9 /* URLSessionExtension.swift */; };
+		C02B356D2128865A009D93E9 /* URLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B356C2128865A009D93E9 /* URLRequestExtension.swift */; };
+		C02B3571212889C6009D93E9 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C02B356E212889C6009D93E9 /* Swinject.framework */; };
+		C02B3572212889C6009D93E9 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C02B356F212889C6009D93E9 /* PromiseKit.framework */; };
+		C02B3573212889C6009D93E9 /* SwinjectStoryboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C02B3570212889C6009D93E9 /* SwinjectStoryboard.framework */; };
+		C02B357621289A18009D93E9 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B357421289A18009D93E9 /* UserTableViewCell.swift */; };
+		C02B357721289A18009D93E9 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C02B357521289A18009D93E9 /* UserTableViewCell.xib */; };
 		C08300DB20D54E86000F51DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08300DA20D54E86000F51DE /* AppDelegate.swift */; };
-		C08300DD20D54E86000F51DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08300DC20D54E86000F51DE /* ViewController.swift */; };
 		C08300E020D54E86000F51DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C08300DE20D54E86000F51DE /* Main.storyboard */; };
 		C08300E220D54E87000F51DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C08300E120D54E87000F51DE /* Assets.xcassets */; };
 		C08300E520D54E87000F51DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C08300E320D54E87000F51DE /* LaunchScreen.storyboard */; };
@@ -32,9 +44,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C02B355B212879E0009D93E9 /* DependencyInjection.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DependencyInjection.generated.swift; path = SourceryTests/GeneratedTests/DependencyInjection.generated.swift; sourceTree = SOURCE_ROOT; };
+		C02B355C212879E1009D93E9 /* Mocks.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Mocks.generated.swift; path = SourceryTests/GeneratedTests/Mocks.generated.swift; sourceTree = SOURCE_ROOT; };
+		C02B355F21287A1D009D93E9 /* MainContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainer.swift; sourceTree = "<group>"; };
+		C02B356121287FAF009D93E9 /* UsersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersController.swift; sourceTree = "<group>"; };
+		C02B356321287FDD009D93E9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C02B356521288177009D93E9 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
+		C02B356A21288609009D93E9 /* URLSessionExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionExtension.swift; sourceTree = "<group>"; };
+		C02B356C2128865A009D93E9 /* URLRequestExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestExtension.swift; sourceTree = "<group>"; };
+		C02B356E212889C6009D93E9 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
+		C02B356F212889C6009D93E9 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
+		C02B3570212889C6009D93E9 /* SwinjectStoryboard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwinjectStoryboard.framework; path = Carthage/Build/iOS/SwinjectStoryboard.framework; sourceTree = "<group>"; };
+		C02B357421289A18009D93E9 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		C02B357521289A18009D93E9 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		C08300D720D54E86000F51DE /* SourceryTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SourceryTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C08300DA20D54E86000F51DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C08300DC20D54E86000F51DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C08300DF20D54E86000F51DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C08300E120D54E87000F51DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C08300E420D54E87000F51DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +79,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C02B3573212889C6009D93E9 /* SwinjectStoryboard.framework in Frameworks */,
+				C02B3572212889C6009D93E9 /* PromiseKit.framework in Frameworks */,
 				C08300FD20D550BD000F51DE /* Rswift.framework in Frameworks */,
+				C02B3571212889C6009D93E9 /* Swinject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +96,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C02B356821288576009D93E9 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				C02B356C2128865A009D93E9 /* URLRequestExtension.swift */,
+				C02B356A21288609009D93E9 /* URLSessionExtension.swift */,
+				C02B356321287FDD009D93E9 /* User.swift */,
+				C02B356121287FAF009D93E9 /* UsersController.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		C02B35692128858C009D93E9 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				C02B356521288177009D93E9 /* UserListViewController.swift */,
+				C083010120D5520A000F51DE /* LoginView.swift */,
+				C02B357421289A18009D93E9 /* UserTableViewCell.swift */,
+				C02B357521289A18009D93E9 /* UserTableViewCell.xib */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
 		C08300CE20D54E86000F51DE = {
 			isa = PBXGroup;
 			children = (
@@ -91,15 +140,16 @@
 		C08300D920D54E86000F51DE /* SourceryTests */ = {
 			isa = PBXGroup;
 			children = (
+				C02B35692128858C009D93E9 /* ui */,
+				C02B356821288576009D93E9 /* service */,
 				C08300FF20D551EA000F51DE /* R.generated.swift */,
 				C08300DA20D54E86000F51DE /* AppDelegate.swift */,
-				C08300DC20D54E86000F51DE /* ViewController.swift */,
 				C08300DE20D54E86000F51DE /* Main.storyboard */,
 				C08300E120D54E87000F51DE /* Assets.xcassets */,
 				C08300E320D54E87000F51DE /* LaunchScreen.storyboard */,
 				C08300E620D54E87000F51DE /* Info.plist */,
-				C083010120D5520A000F51DE /* LoginView.swift */,
 				C083010320D55218000F51DE /* LoginView.xib */,
+				C02B355F21287A1D009D93E9 /* MainContainer.swift */,
 			);
 			path = SourceryTests;
 			sourceTree = "<group>";
@@ -107,6 +157,8 @@
 		C08300EE20D54E87000F51DE /* SourceryTestsTests */ = {
 			isa = PBXGroup;
 			children = (
+				C02B355B212879E0009D93E9 /* DependencyInjection.generated.swift */,
+				C02B355C212879E1009D93E9 /* Mocks.generated.swift */,
 				C083010820D55E05000F51DE /* RNibTests.generated.swift */,
 				C08300EF20D54E87000F51DE /* SourceryTestsTests.swift */,
 				C08300F120D54E87000F51DE /* Info.plist */,
@@ -118,6 +170,9 @@
 		C08300FB20D550BC000F51DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C02B356F212889C6009D93E9 /* PromiseKit.framework */,
+				C02B356E212889C6009D93E9 /* Swinject.framework */,
+				C02B3570212889C6009D93E9 /* SwinjectStoryboard.framework */,
 				C08300FC20D550BD000F51DE /* Rswift.framework */,
 			);
 			name = Frameworks;
@@ -131,10 +186,11 @@
 			buildConfigurationList = C08300F420D54E87000F51DE /* Build configuration list for PBXNativeTarget "SourceryTests" */;
 			buildPhases = (
 				C08300FA20D5500B000F51DE /* R */,
+				C02B355A212879B3009D93E9 /* Sourcery */,
 				C08300D320D54E86000F51DE /* Sources */,
 				C08300D420D54E86000F51DE /* Frameworks */,
-				C08300FE20D550E0000F51DE /* Carthage */,
 				C08300D520D54E86000F51DE /* Resources */,
+				C08300FE20D550E0000F51DE /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -211,6 +267,7 @@
 				C08300E220D54E87000F51DE /* Assets.xcassets in Resources */,
 				C083010420D55218000F51DE /* LoginView.xib in Resources */,
 				C08300E020D54E86000F51DE /* Main.storyboard in Resources */,
+				C02B357721289A18009D93E9 /* UserTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +281,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		C02B355A212879B3009D93E9 /* Sourcery */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Sourcery;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Libs/sourcery --config ./sourcery/tests";
+		};
 		C08300FA20D5500B000F51DE /* R */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -245,6 +316,9 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PromiseKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Swinject.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwinjectStoryboard.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -273,10 +347,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C08300DD20D54E86000F51DE /* ViewController.swift in Sources */,
+				C02B356621288177009D93E9 /* UserListViewController.swift in Sources */,
+				C02B356D2128865A009D93E9 /* URLRequestExtension.swift in Sources */,
+				C02B357621289A18009D93E9 /* UserTableViewCell.swift in Sources */,
+				C02B356021287A1D009D93E9 /* MainContainer.swift in Sources */,
+				C02B356221287FAF009D93E9 /* UsersController.swift in Sources */,
 				C08300DB20D54E86000F51DE /* AppDelegate.swift in Sources */,
 				C083010220D5520A000F51DE /* LoginView.swift in Sources */,
+				C02B356B21288609009D93E9 /* URLSessionExtension.swift in Sources */,
+				C02B3567212882A3009D93E9 /* DependencyInjection.generated.swift in Sources */,
 				C083010020D551EA000F51DE /* R.generated.swift in Sources */,
+				C02B356421287FDD009D93E9 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C02B355E212879E1009D93E9 /* Mocks.generated.swift in Sources */,
 				C083010620D558E5000F51DE /* LoginViewTests.swift in Sources */,
 				C08300F020D54E87000F51DE /* SourceryTestsTests.swift in Sources */,
 				C083010920D55E06000F51DE /* RNibTests.generated.swift in Sources */,

@@ -1,0 +1,51 @@
+import Swinject
+import PromiseKit
+
+extension Container {
+{% for type in types.all where type.variables|annotated:"injected"%}
+    {% if type.kind == "class" %}
+    static func defaultRegistration(resolver: Swinject.Resolver, for entity: {{type.name}}) {
+        {% for variable in type.variables|annotated:"injected" %}
+            {% if variable.typeName|hasSuffix:"?" %}
+        {# Do not cut the '?' mark - we want to get dependencies for optional type #}
+        entity.{{variable.name}} = resolver.resolve({{variable.typeName}}.self)!        
+            {% else %}
+        entity.{{variable.name}} = resolver.resolve({{variable.typeName.unwrappedTypeName}}.self)!        
+            {% endif %}
+        {% endfor %}
+    }
+    {% else %}
+    static func defaultRegistration(resolver: Swinject.Resolver, for entity: {{type.name}}) -> {{type.name}} {
+        var newEntity = entity
+        {% for variable in type.variables|annotated:"injected" %}
+            {% if variable.typeName|hasSuffix:"?" %}
+        {# Do not cut the '?' mark - we want to get dependencies for optional type #}
+        newEntity.{{variable.name}} = resolver.resolve({{variable.typeName}}.self)!        
+            {% else %}
+        newEntity.{{variable.name}} = resolver.resolve({{variable.typeName.unwrappedTypeName}}.self)!        
+            {% endif %}
+        {% endfor %}
+        return newEntity
+    }
+    {% endif %}
+{% endfor %}
+
+{% for type in types.all where type.methods|annotated:"injected_constructor"%}
+    {% for method in type.methods|annotated:"injected_constructor" %}
+    static func registerConstructor(_ r: Swinject.Resolver) -> {{method.actualReturnTypeName}} {
+        return {{type.name}}.{{method.shortName}}(
+        {% for parameter in method.parameters %}
+            {% if parameter.typeName|hasSuffix:"?" %}
+                {# Do not cut the '?' mark - we want to get dependencies for optional type #}
+            {{parameter.name}}: r.resolve({{parameter.typeName}}.self)!{% if not forloop.last %},{% endif %}
+            {% else %}
+            {{parameter.name}}: r.resolve({{parameter.typeName.unwrappedTypeName}}.self)!{% if not forloop.last %},{% endif %}
+            {% endif %}
+        {% endfor %}
+        )
+    }
+
+    {% endfor %}
+
+{% endfor %}
+}

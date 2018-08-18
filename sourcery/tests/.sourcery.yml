@@ -3,6 +3,8 @@ sources:
   - "./../../SourceryTests/R.generated.swift"
 templates:
   - "./../RNibTests.stencil"
+  - "./../DependencyInjection.stencil"
+  - "./../Mocks.stencil"
 output:
   "./../../SourceryTests/GeneratedTests"
 args:

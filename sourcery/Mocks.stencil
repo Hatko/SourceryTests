@@ -1,0 +1,57 @@
+import XCTest
+import Nimble
+import Rswift
+import PromiseKit
+@testable import Albert
+
+enum TestsError: LocalizedError {
+    case promiseIsNotSet(String, String)
+
+    var errorDescription: String? {
+        switch self {
+        case .promiseIsNotSet(let name, let entity): return "Set \(name) in \(entity) to return non-failing promise"
+        }
+    }
+}
+
+{% macro swiftifyMethodName name %}{{ name | replace:"(","_" | replace:")","" | replace:":","_" | replace:"`","" | snakeToCamelCase | lowerFirstWord }}{% endmacro %}
+
+{% for type in types.protocols|annotated:"mock" %}
+class Mock{{type.name}}: {{type.name}} {
+    {% if type.variables.count > 0 %}
+    {% for var in type.variables %}
+    var {{var.name}}: {{var.typeName}}
+    {% endfor %}
+    init(
+    {% for var in type.variables %}
+        {{var.name}}: {{var.typeName}}{% if not forloop.last %},{% endif %}
+    {% endfor %}
+    ) {
+    {% for var in type.variables %}
+        self.{{var.name}} = {{var.name}}
+    {% endfor %}
+    }
+
+    {% endif %}
+    {% for method in type.methods %}
+    var {% call swiftifyMethodName method.selectorName %}CallsCount = 0
+        {% if not method.returnTypeName.isVoid %}
+    var {% call swiftifyMethodName method.selectorName %}ReturnValue: (({% for methodParameter in method.parameters %}{{methodParameter.typeName}}{% if not forloop.last %},{% endif %}{% endfor %}) -> {{method.actualReturnTypeName}}){% if method.returnType.name == "Promise" %}?{% else %}!{% endif %}
+        {% endif %}
+    func {{method.name}} -> {{method.actualReturnTypeName}} {
+        {% call swiftifyMethodName method.selectorName %}CallsCount += 1
+        {% if not method.returnTypeName.isVoid %}
+            {% if method.returnType.name == "Promise" %}
+        return {% call swiftifyMethodName method.selectorName %}ReturnValue?({% for methodParameter in method.parameters %}{{methodParameter.name}}{% if not forloop.last %},{% endif %}{% endfor %}) ?? Promise(error: TestsError.promiseIsNotSet("{% call swiftifyMethodName method.selectorName %}ReturnValue", "Mock{{type.name}}"))
+            {% else %}
+        return {% call swiftifyMethodName method.selectorName %}ReturnValue({% for methodParameter in method.parameters %}{{methodParameter.name}}{% if not forloop.last %},{% endif %}{% endfor %})
+            {% endif %}
+        {% endif %}
+    }
+    {% if not forloop.last %}
+
+    {% endif %}
+    {% endfor %}
+}
+
+{% endfor %}
