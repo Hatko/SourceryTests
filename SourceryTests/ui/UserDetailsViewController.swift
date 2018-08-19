@@ -7,15 +7,27 @@
 //
 
 import UIKit
+import SnapKit
 
 class UserDetailsViewController: UIViewController {
-
+    
+    @IBOutlet weak var userCardContainer: UIView! {
+        didSet {
+            guard let userCardView = R.nib.userCardView.firstView(owner: nil) else {
+                fatalError("Unexpected storyboard state")
+            }
+            self.userCardView = userCardView
+            userCardView.translatesAutoresizingMaskIntoConstraints = false
+            userCardContainer.addSubview(userCardView)
+            userCardView.snp.makeConstraints { $0.edges.equalToSuperview() }
+        }
+    }
+    weak var userCardView: UserCardView!
     var user: User!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        userCardView.fill(withSource: user)
     }
-
 }

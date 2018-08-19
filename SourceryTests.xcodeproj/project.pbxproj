@@ -23,6 +23,9 @@
 		C02B357D21296510009D93E9 /* SpecificUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B357C21296510009D93E9 /* SpecificUserController.swift */; };
 		C02B357F212967C5009D93E9 /* DependencyInjection.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B357E212967C5009D93E9 /* DependencyInjection.generated.swift */; };
 		C02B35812129699C009D93E9 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B35802129699C009D93E9 /* UserDetailsViewController.swift */; };
+		C02B3583212973EC009D93E9 /* UserCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B3582212973EC009D93E9 /* UserCardView.swift */; };
+		C02B3585212973FD009D93E9 /* UserCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C02B3584212973FD009D93E9 /* UserCardView.xib */; };
+		C02B3587212977C0009D93E9 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C02B3586212977BF009D93E9 /* SnapKit.framework */; };
 		C08300DB20D54E86000F51DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08300DA20D54E86000F51DE /* AppDelegate.swift */; };
 		C08300E020D54E86000F51DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C08300DE20D54E86000F51DE /* Main.storyboard */; };
 		C08300E220D54E87000F51DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C08300E120D54E87000F51DE /* Assets.xcassets */; };
@@ -62,6 +65,9 @@
 		C02B357C21296510009D93E9 /* SpecificUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificUserController.swift; sourceTree = "<group>"; };
 		C02B357E212967C5009D93E9 /* DependencyInjection.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DependencyInjection.generated.swift; path = GeneratedTests/DependencyInjection.generated.swift; sourceTree = "<group>"; };
 		C02B35802129699C009D93E9 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
+		C02B3582212973EC009D93E9 /* UserCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardView.swift; sourceTree = "<group>"; };
+		C02B3584212973FD009D93E9 /* UserCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCardView.xib; sourceTree = "<group>"; };
+		C02B3586212977BF009D93E9 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		C08300D720D54E86000F51DE /* SourceryTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SourceryTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C08300DA20D54E86000F51DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C08300DF20D54E86000F51DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,6 +94,7 @@
 				C02B3572212889C6009D93E9 /* PromiseKit.framework in Frameworks */,
 				C08300FD20D550BD000F51DE /* Rswift.framework in Frameworks */,
 				C02B3571212889C6009D93E9 /* Swinject.framework in Frameworks */,
+				C02B3587212977C0009D93E9 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +129,8 @@
 				C02B357421289A18009D93E9 /* UserTableViewCell.swift */,
 				C02B357521289A18009D93E9 /* UserTableViewCell.xib */,
 				C02B35802129699C009D93E9 /* UserDetailsViewController.swift */,
+				C02B3582212973EC009D93E9 /* UserCardView.swift */,
+				C02B3584212973FD009D93E9 /* UserCardView.xib */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -178,6 +187,7 @@
 		C08300FB20D550BC000F51DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C02B3586212977BF009D93E9 /* SnapKit.framework */,
 				C02B356F212889C6009D93E9 /* PromiseKit.framework */,
 				C02B356E212889C6009D93E9 /* Swinject.framework */,
 				C02B3570212889C6009D93E9 /* SwinjectStoryboard.framework */,
@@ -277,6 +287,7 @@
 				C083010420D55218000F51DE /* LoginView.xib in Resources */,
 				C08300E020D54E86000F51DE /* Main.storyboard in Resources */,
 				C02B357721289A18009D93E9 /* UserTableViewCell.xib in Resources */,
+				C02B3585212973FD009D93E9 /* UserCardView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +353,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/PromiseKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Swinject.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwinjectStoryboard.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -383,6 +395,7 @@
 				C02B357F212967C5009D93E9 /* DependencyInjection.generated.swift in Sources */,
 				C083010020D551EA000F51DE /* R.generated.swift in Sources */,
 				C02B356421287FDD009D93E9 /* User.swift in Sources */,
+				C02B3583212973EC009D93E9 /* UserCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

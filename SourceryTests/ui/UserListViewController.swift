@@ -32,9 +32,7 @@ class UserListViewController: UIViewController {
                 self.users = users
                 self.tableView.reloadData()
             }
-            .catch { error in
-                print(error)
-            }
+            .loggedError()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -75,8 +73,15 @@ extension UserListViewController: UITableViewDelegate {
                     sender: user
                 )
             }
-            .catch { error in
-                print(error)
-            }
+            .loggedError()
+    }
+}
+
+extension Promise {
+    @discardableResult
+    func loggedError() -> PMKFinalizer {
+        return self.catch { error in
+            print(error)
+        }
     }
 }

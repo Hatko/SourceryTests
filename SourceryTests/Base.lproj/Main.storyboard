@@ -53,9 +53,26 @@
                     <view key="view" contentMode="scaleToFill" id="COh-mE-KXL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cin-Wa-sjh">
+                                <rect key="frame" x="16" y="64" width="343" height="140"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="XzE-7X-jLB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cin-Wa-sjh" secondAttribute="trailing" constant="16" id="YaA-aY-OgA"/>
+                            <constraint firstItem="cin-Wa-sjh" firstAttribute="leading" secondItem="COh-mE-KXL" secondAttribute="leading" constant="16" id="gDG-kj-Y3k"/>
+                            <constraint firstItem="WBe-9M-1Kr" firstAttribute="top" secondItem="cin-Wa-sjh" secondAttribute="top" id="pqE-NH-2VL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WBe-9M-1Kr"/>
                     </view>
+                    <connections>
+                        <outlet property="userCardContainer" destination="cin-Wa-sjh" id="Wdm-J3-2U6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Jf-Gt-GL8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
