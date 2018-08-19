@@ -12,24 +12,40 @@ import PromiseKit
 class UserListViewController: UIViewController {
     // sourcery:begin: injected
     var usersController: UsersControllerProtocol!
+    var userDetailsControllerProtocol: UserDetailsControllerProtocol!
     // sourcery:end
+
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.register(R.nib.userTableViewCell)
         }
     }
 
-    var users = [User]()
+    var users = [UserGeneralInfo]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        _ = usersController
+        usersController
             .get()
             .done { users in
                 self.users = users
                 self.tableView.reloadData()
             }
+            .catch { error in
+                print(error)
+            }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+
+        if let segue = R.segue.userListViewController.userDetailsViewController(segue: segue) {
+            guard let user = sender as? User else {
+                fatalError("Unexpected")
+            }
+            segue.destination.user = user
+        }
     }
 }
 
@@ -49,5 +65,18 @@ extension UserListViewController: UITableViewDataSource {
 }
 
 extension UserListViewController: UITableViewDelegate {
-
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let user = users[indexPath.row]
+        userDetailsControllerProtocol
+            .get(user.login)
+            .done { user in
+                self.performSegue(
+                    withIdentifier: R.segue.userListViewController.userDetailsViewController,
+                    sender: user
+                )
+            }
+            .catch { error in
+                print(error)
+            }
+    }
 }

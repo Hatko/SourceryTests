@@ -20,6 +20,8 @@ extension Container {
 
     private func registerViewControllers() {
         storyboardInitCompleted(UserListViewController.self, initCompleted: Container.defaultRegistration)
+        storyboardInitCompleted(UserDetailsViewController.self) { _, _ in }
+        storyboardInitCompleted(UINavigationController.self) { _, _ in }
     }
 
     private func registerServices() {
@@ -28,5 +30,6 @@ extension Container {
         }
 
         register(UsersControllerProtocol.self, factory: Container.registerConstructor)
+        register(UserDetailsControllerProtocol.self, factory: Container.registerConstructor)
     }
 }

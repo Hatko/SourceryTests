@@ -1,10 +1,10 @@
 sources:
   - "./../../SourceryTests/"
-  - "./../../SourceryTests/R.generated.swift"
+  - "./../../SourceryTestsTests/"
 templates:
   - "./../RNibTests.stencil"
   - "./../DependencyInjection.stencil"
-  - "./../Mocks.stencil"
+#  - "./../Mocks.stencil"
 output:
   "./../../SourceryTests/GeneratedTests"
 args:

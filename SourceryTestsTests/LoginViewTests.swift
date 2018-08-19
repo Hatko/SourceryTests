@@ -9,6 +9,10 @@
 import XCTest
 @testable import SourceryTests
 
+// sourcery:begin: mock
+extension UsersControllerProtocol {}
+// sourcery:end
+
 class LoginViewTests: XCTestCase {
     var sut: LoginView!
     

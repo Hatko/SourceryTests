@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C02B355E212879E1009D93E9 /* Mocks.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B355C212879E1009D93E9 /* Mocks.generated.swift */; };
 		C02B356021287A1D009D93E9 /* MainContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B355F21287A1D009D93E9 /* MainContainer.swift */; };
 		C02B356221287FAF009D93E9 /* UsersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B356121287FAF009D93E9 /* UsersController.swift */; };
 		C02B356421287FDD009D93E9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B356321287FDD009D93E9 /* User.swift */; };
 		C02B356621288177009D93E9 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B356521288177009D93E9 /* UserListViewController.swift */; };
-		C02B3567212882A3009D93E9 /* DependencyInjection.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B355B212879E0009D93E9 /* DependencyInjection.generated.swift */; };
 		C02B356B21288609009D93E9 /* URLSessionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B356A21288609009D93E9 /* URLSessionExtension.swift */; };
 		C02B356D2128865A009D93E9 /* URLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B356C2128865A009D93E9 /* URLRequestExtension.swift */; };
 		C02B3571212889C6009D93E9 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C02B356E212889C6009D93E9 /* Swinject.framework */; };
@@ -20,6 +18,11 @@
 		C02B3573212889C6009D93E9 /* SwinjectStoryboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C02B3570212889C6009D93E9 /* SwinjectStoryboard.framework */; };
 		C02B357621289A18009D93E9 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B357421289A18009D93E9 /* UserTableViewCell.swift */; };
 		C02B357721289A18009D93E9 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C02B357521289A18009D93E9 /* UserTableViewCell.xib */; };
+		C02B357A2128A2BF009D93E9 /* Mocks.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B35792128A2BF009D93E9 /* Mocks.generated.swift */; };
+		C02B357B21296327009D93E9 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C02B356F212889C6009D93E9 /* PromiseKit.framework */; };
+		C02B357D21296510009D93E9 /* SpecificUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B357C21296510009D93E9 /* SpecificUserController.swift */; };
+		C02B357F212967C5009D93E9 /* DependencyInjection.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B357E212967C5009D93E9 /* DependencyInjection.generated.swift */; };
+		C02B35812129699C009D93E9 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B35802129699C009D93E9 /* UserDetailsViewController.swift */; };
 		C08300DB20D54E86000F51DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08300DA20D54E86000F51DE /* AppDelegate.swift */; };
 		C08300E020D54E86000F51DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C08300DE20D54E86000F51DE /* Main.storyboard */; };
 		C08300E220D54E87000F51DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C08300E120D54E87000F51DE /* Assets.xcassets */; };
@@ -44,8 +47,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C02B355B212879E0009D93E9 /* DependencyInjection.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DependencyInjection.generated.swift; path = SourceryTests/GeneratedTests/DependencyInjection.generated.swift; sourceTree = SOURCE_ROOT; };
-		C02B355C212879E1009D93E9 /* Mocks.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Mocks.generated.swift; path = SourceryTests/GeneratedTests/Mocks.generated.swift; sourceTree = SOURCE_ROOT; };
 		C02B355F21287A1D009D93E9 /* MainContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainer.swift; sourceTree = "<group>"; };
 		C02B356121287FAF009D93E9 /* UsersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersController.swift; sourceTree = "<group>"; };
 		C02B356321287FDD009D93E9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -57,6 +58,10 @@
 		C02B3570212889C6009D93E9 /* SwinjectStoryboard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwinjectStoryboard.framework; path = Carthage/Build/iOS/SwinjectStoryboard.framework; sourceTree = "<group>"; };
 		C02B357421289A18009D93E9 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		C02B357521289A18009D93E9 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		C02B35792128A2BF009D93E9 /* Mocks.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Mocks.generated.swift; path = SourceryTests/GeneratedTests/Mocks.generated.swift; sourceTree = SOURCE_ROOT; };
+		C02B357C21296510009D93E9 /* SpecificUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificUserController.swift; sourceTree = "<group>"; };
+		C02B357E212967C5009D93E9 /* DependencyInjection.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DependencyInjection.generated.swift; path = GeneratedTests/DependencyInjection.generated.swift; sourceTree = "<group>"; };
+		C02B35802129699C009D93E9 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
 		C08300D720D54E86000F51DE /* SourceryTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SourceryTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C08300DA20D54E86000F51DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C08300DF20D54E86000F51DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C02B357B21296327009D93E9 /* PromiseKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +109,7 @@
 				C02B356A21288609009D93E9 /* URLSessionExtension.swift */,
 				C02B356321287FDD009D93E9 /* User.swift */,
 				C02B356121287FAF009D93E9 /* UsersController.swift */,
+				C02B357C21296510009D93E9 /* SpecificUserController.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -114,6 +121,7 @@
 				C083010120D5520A000F51DE /* LoginView.swift */,
 				C02B357421289A18009D93E9 /* UserTableViewCell.swift */,
 				C02B357521289A18009D93E9 /* UserTableViewCell.xib */,
+				C02B35802129699C009D93E9 /* UserDetailsViewController.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -140,6 +148,7 @@
 		C08300D920D54E86000F51DE /* SourceryTests */ = {
 			isa = PBXGroup;
 			children = (
+				C02B357E212967C5009D93E9 /* DependencyInjection.generated.swift */,
 				C02B35692128858C009D93E9 /* ui */,
 				C02B356821288576009D93E9 /* service */,
 				C08300FF20D551EA000F51DE /* R.generated.swift */,
@@ -157,8 +166,7 @@
 		C08300EE20D54E87000F51DE /* SourceryTestsTests */ = {
 			isa = PBXGroup;
 			children = (
-				C02B355B212879E0009D93E9 /* DependencyInjection.generated.swift */,
-				C02B355C212879E1009D93E9 /* Mocks.generated.swift */,
+				C02B35792128A2BF009D93E9 /* Mocks.generated.swift */,
 				C083010820D55E05000F51DE /* RNibTests.generated.swift */,
 				C08300EF20D54E87000F51DE /* SourceryTestsTests.swift */,
 				C08300F120D54E87000F51DE /* Info.plist */,
@@ -209,6 +217,7 @@
 				C08300E720D54E87000F51DE /* Sources */,
 				C08300E820D54E87000F51DE /* Frameworks */,
 				C08300E920D54E87000F51DE /* Resources */,
+				C02B35782128A101009D93E9 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -295,6 +304,20 @@
 			shellPath = /bin/sh;
 			shellScript = "./Libs/sourcery --config ./sourcery/tests";
 		};
+		C02B35782128A101009D93E9 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Carthage;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		C08300FA20D5500B000F51DE /* R */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -355,7 +378,9 @@
 				C08300DB20D54E86000F51DE /* AppDelegate.swift in Sources */,
 				C083010220D5520A000F51DE /* LoginView.swift in Sources */,
 				C02B356B21288609009D93E9 /* URLSessionExtension.swift in Sources */,
-				C02B3567212882A3009D93E9 /* DependencyInjection.generated.swift in Sources */,
+				C02B35812129699C009D93E9 /* UserDetailsViewController.swift in Sources */,
+				C02B357D21296510009D93E9 /* SpecificUserController.swift in Sources */,
+				C02B357F212967C5009D93E9 /* DependencyInjection.generated.swift in Sources */,
 				C083010020D551EA000F51DE /* R.generated.swift in Sources */,
 				C02B356421287FDD009D93E9 /* User.swift in Sources */,
 			);
@@ -365,9 +390,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C02B355E212879E1009D93E9 /* Mocks.generated.swift in Sources */,
 				C083010620D558E5000F51DE /* LoginViewTests.swift in Sources */,
 				C08300F020D54E87000F51DE /* SourceryTestsTests.swift in Sources */,
+				C02B357A2128A2BF009D93E9 /* Mocks.generated.swift in Sources */,
 				C083010920D55E06000F51DE /* RNibTests.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -567,6 +592,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S462JSAM8X;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SourceryTestsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -588,6 +617,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S462JSAM8X;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SourceryTestsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

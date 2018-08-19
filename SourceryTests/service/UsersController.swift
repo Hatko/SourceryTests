@@ -10,7 +10,7 @@ import Foundation
 import PromiseKit
 
 protocol UsersControllerProtocol {
-    func get() -> Promise<[User]>
+    func get() -> Promise<[UserGeneralInfo]>
 }
 
 class UsersController: UsersControllerProtocol {
@@ -21,13 +21,10 @@ class UsersController: UsersControllerProtocol {
         self.session = session
     }
 
-    func get() -> Promise<[User]> {
+    func get() -> Promise<[UserGeneralInfo]> {
         return session.get(url: URL(string: "https://api.github.com/users")!)
-            .then { data -> Promise<[User]> in
-//                guard let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [Any] else {
-//                    throw STError.invalidResponse
-//                }
-                return try .value(JSONDecoder().decode([User].self, from: data))
+            .then { data -> Promise<[UserGeneralInfo]> in
+                return try .value(JSONDecoder().decode([UserGeneralInfo].self, from: data))
             }
     }
 }

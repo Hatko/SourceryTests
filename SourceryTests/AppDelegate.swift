@@ -25,7 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             fatalError("Invalid storyboard state")
         }
 
+        window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = listController
+        window?.makeKeyAndVisible()
 
         return true
     }

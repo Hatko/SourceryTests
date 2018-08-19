@@ -14,7 +14,7 @@ protocol UserTableViewCellSource {
     var name: String { get }
 }
 
-extension User: UserTableViewCellSource {
+extension UserGeneralInfo: UserTableViewCellSource {
     var photoUrl: URL {
         return URL(string: avatar_url)!
     }

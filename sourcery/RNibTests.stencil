@@ -1,6 +1,7 @@
 import XCTest
 import Rswift
-@testable import Albert
+import WebKit
+@testable import SourceryTests
 
 class GeneratedTests: XCTestCase  {
     func test_viewsOutlets() {
@@ -10,7 +11,7 @@ class GeneratedTests: XCTestCase  {
             {% for variable in method.returnType.variables %}
                 {# Check for suffix to skip outlets that are optionaly presented #}
                 {% for attribute in variable.attributes where attribute == "IBOutlet" and variable.typeName|hasSuffix:"!" %}
-        expect(R.nib.{{ staticXibVar.name }}.first().{{variable.name}}).toNot(beNil())
+        XCTAssertNotNil(R.nib.{{ staticXibVar.name }}.firstView(owner: nil)!.{{variable.name}})
                 {% endfor %}
             {% endfor %}
         {% endfor %}
@@ -29,7 +30,7 @@ class GeneratedTests: XCTestCase  {
                 {% for variable in method.returnType.variables %}
                     {# Check for suffix to skip outlets that are optionaly presented #}
                     {% for attribute in variable.attributes where attribute == "IBOutlet" and variable.typeName|hasSuffix:"!" %}
-        expect({{staticXibVar.name}}{{controllerProp.name|upperFirstLetter}}.{{variable.name}}).toNot(beNil())
+        XCTAssertNotNil({{staticXibVar.name}}{{controllerProp.name|upperFirstLetter}}.{{variable.name}})
                     {% endfor %}
                 {% endfor %}
             {% endfor %}

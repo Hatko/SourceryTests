@@ -1,8 +1,7 @@
 import XCTest
-import Nimble
 import Rswift
 import PromiseKit
-@testable import Albert
+@testable import SourceryTests
 
 enum TestsError: LocalizedError {
     case promiseIsNotSet(String, String)
