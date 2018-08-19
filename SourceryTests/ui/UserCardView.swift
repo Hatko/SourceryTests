@@ -11,7 +11,7 @@ import WebKit
 
 protocol UserCardViewSource {
     var photoUrl: URL { get }
-    var name: String { get }
+    var name: String? { get }
     var company: String? { get }
     var reposCount: Int { get }
     var followers: Int { get }

@@ -48,10 +48,10 @@ struct User: Codable {
     var received_events_url: String
     var type: String
     var site_admin: Bool
-    var name: String
+    var name: String?
     var company: String?
     var blog: String
-    var location: String
+    var location: String?
     var email: String?
     var hireable: Bool?
     var bio: String?
